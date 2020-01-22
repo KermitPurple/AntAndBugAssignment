@@ -1,5 +1,5 @@
 # INHERITANCE AND POLYMORPHISM
-### **Info on the assignment:**
+## **Info on the assignment:**
 
 Created by Kristjan **Thorsteinsson** on 01/04/14.
 
