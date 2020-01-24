@@ -141,3 +141,6 @@ bool Bug::in_range(int xx, int yy)
 {
     return (xx >= 0) && (xx < WORLDSIZE) && (yy >= 0) && (yy < WORLDSIZE);
 }
+
+void Bug::printIcon(int x, int y) const{
+}

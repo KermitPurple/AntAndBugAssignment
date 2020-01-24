@@ -37,6 +37,9 @@ public:
     bool isDead() const;
     
     bool in_range(int xx, int yy);
+
+	//prints the icon of the corresponding organism
+	virtual void printIcon(int x, int y) const;
     
 private:
     

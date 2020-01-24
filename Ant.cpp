@@ -87,3 +87,6 @@ bool Ant::in_range(int xx, int yy)
 {
     return (xx >= 0) && (xx < WORLDSIZE) && (yy >= 0) && (yy < WORLDSIZE);
 }
+
+void Ant::printIcon(int x, int y) const{
+}
