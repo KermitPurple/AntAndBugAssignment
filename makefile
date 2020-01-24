@@ -8,7 +8,7 @@ Bug.o: Bug.cpp Bug.h
 	g++ Bug.cpp -c -o Bug.o -l freeGLUT -l openGL32  
 
 Organism.o: Organism.cpp Organism.h
-	g++ Organism.cpp -c -o Organism.o 
+	g++ Organism.cpp -c -o Organism.o -l freeGLUT -l openGL32
 
 World.o: World.cpp World.h
 	g++ World.cpp -c -o World.o -l freeGLUT -l openGL32
