@@ -89,4 +89,6 @@ bool Ant::in_range(int xx, int yy)
 }
 
 void Ant::printIcon(int x, int y) const{
+	//Set color
+	//glColor3f( /*you know*/);
 }

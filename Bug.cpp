@@ -144,4 +144,6 @@ bool Bug::in_range(int xx, int yy)
 }
 
 void Bug::printIcon(int x, int y) const{
+	//Set color
+	//glColor3f( /*you know*/);
 }

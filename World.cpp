@@ -209,6 +209,8 @@ void World::breedOrganisms() {
 
 //print grid
 void World::printGrid() const{
+	//Set color
+	//glColor3f( /*you know*/);
 	//print horizontal lines
 	for(int i = 1; i < WORLDHEIGHT; i++){
 		glBegin(GL_LINES);
@@ -227,6 +229,8 @@ void World::printGrid() const{
 
 //print organism numbers
 void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
+	//Set color
+	//glColor3f( /*you know*/);
 	// convert from int to string
 	stringstream str;
 	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;
