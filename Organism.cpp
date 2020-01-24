@@ -1,3 +1,4 @@
+#include <GL/glut.h>
 #include <iostream>
 #include "Organism.h"
 #include "World.h"
@@ -65,4 +66,18 @@ bool Organism::in_range(int xx, int yy)
 // Returns true if organism is dead, false otherwise.
 bool Organism::isDead() const {
     return false;
+}
+void Organism::printSquare(double x, double y) const{
+	//transform coordinates
+	x += 0.5;
+	y = abs(y - WORLDSIZE);
+	y += 0.5;
+
+	//draw
+	glBegin(GL_QUADS);
+		glVertex2f((x - 0.4) * SCALE, (y - 0.4) * SCALE);
+		glVertex2f((x + 0.4) * SCALE, (y - 0.4) * SCALE);
+		glVertex2f((x + 0.4) * SCALE, (y + 0.4) * SCALE);
+		glVertex2f((x - 0.4) * SCALE, (y + 0.4) * SCALE);
+	glEnd();
 }

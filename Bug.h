@@ -39,7 +39,7 @@ public:
     bool in_range(int xx, int yy);
 
 	//prints the icon of the corresponding organism
-	virtual void printIcon(int x, int y) const;
+	virtual void printIcon(double x, double y) const;
     
 private:
     

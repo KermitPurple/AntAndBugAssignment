@@ -80,6 +80,7 @@ void World::display() const {
                     numBugs++;
                 }
                 cout << grid[i][j]->representation();
+		grid[i][j]->printIcon(i,j);
             }
         }
         cout << endl;
@@ -87,7 +88,7 @@ void World::display() const {
     cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
 
 	//print text
-	printOrgNums(numAnts, numBugs, numSuperAnts);
+	printOrgNums(numBugs, numAnts, numSuperAnts);
 }
 
 void World::simulateOneStep() {
@@ -210,7 +211,7 @@ void World::breedOrganisms() {
 //print grid
 void World::printGrid() const{
 	//Set color
-	//glColor3f( /*you know*/);
+	glColor3f(1.000f, 1.000f, 1.000f);
 	//print horizontal lines
 	for(int i = 1; i < WORLDHEIGHT; i++){
 		glBegin(GL_LINES);
@@ -230,7 +231,7 @@ void World::printGrid() const{
 //print organism numbers
 void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
 	//Set color
-	//glColor3f( /*you know*/);
+	glColor3f(1.000f, 1.000f, 1.000f);
 	// convert from int to string
 	stringstream str;
 	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;

@@ -88,7 +88,11 @@ bool Ant::in_range(int xx, int yy)
     return (xx >= 0) && (xx < WORLDSIZE) && (yy >= 0) && (yy < WORLDSIZE);
 }
 
-void Ant::printIcon(int x, int y) const{
+void Ant::printIcon(double x, double y) const{
 	//Set color
-	//glColor3f( /*you know*/);
+	glColor3f(1.000f, 0.000f, 0.000f);
+
+	//print
+	printSquare(x, y);
+
 }

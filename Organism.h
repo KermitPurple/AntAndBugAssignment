@@ -39,7 +39,10 @@ class Organism {
         bool in_range(int xx, int yy);
 
 	//prints the icon of the corresponding organism
-	virtual void printIcon(int x, int y) const = 0;
+	virtual void printIcon(double x, double y) const = 0;
+
+	//prints a square inside of a grid block;
+	void printSquare(double x, double y) const;
 
     protected:
         // Generates an offspring at the given position.

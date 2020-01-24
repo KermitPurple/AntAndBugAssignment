@@ -143,7 +143,10 @@ bool Bug::in_range(int xx, int yy)
     return (xx >= 0) && (xx < WORLDSIZE) && (yy >= 0) && (yy < WORLDSIZE);
 }
 
-void Bug::printIcon(int x, int y) const{
+void Bug::printIcon(double x, double y) const{
 	//Set color
-	//glColor3f( /*you know*/);
+	glColor3f(0, 1, 0);
+	
+	//print
+	printSquare(x, y);
 }
