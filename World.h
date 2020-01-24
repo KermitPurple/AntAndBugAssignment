@@ -8,6 +8,9 @@ enum Move {UP = 0, DOWN, LEFT, RIGHT};
 // The size of this world
 const int WORLDSIZE = 15;
 
+// Height of the screen itself (1 more than WORLDSIZE)
+const int WORLDHEIGHT = WORLDSIZE + 1
+
 //The scaling in ortho for FreeGLUT
 const int SCALE = 10;
 

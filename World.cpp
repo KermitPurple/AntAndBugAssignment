@@ -80,7 +80,7 @@ void World::display() const {
     }
     cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
 	//print Grid
-	for(int i = 1; i < WORLDSIZE + 1; i++){
+	for(int i = 1; i < WORLDHEIGHT; i++){
 		glBegin(GL_LINES);
 			glVertex2f(0, i * SCALE);
 			glVertex2f(WORLDSIZE * SCALE, i * SCALE);
@@ -89,7 +89,7 @@ void World::display() const {
 	for(int i = 0; i < WORLDSIZE; i++){
 		glBegin(GL_LINES);
 			glVertex2f(i * SCALE, SCALE);
-			glVertex2f(i * SCALE, (WORLDSIZE + 1) * SCALE);
+			glVertex2f(i * SCALE, WORLDHEIGHT * SCALE);
 		glEnd();
 	}
 

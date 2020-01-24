@@ -8,9 +8,9 @@ using namespace std;
 World myWorld(time(0));
 
 void display(){
-	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//I do as the sample code says
+	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//Clears the Screen
 	myWorld.display();
-	glutSwapBuffers();//I do as sample code commands
+	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good
 }
 
 //int main()
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]){
 	glutInitWindowPosition ( 0, 0 ) ;
 	glutInitWindowSize (500, 600) ;
 	glutCreateWindow( "Ant and Bug Simulation" );
-	glOrtho(0, WORLDSIZE * SCALE, 0, (WORLDSIZE + 1) * SCALE, 0, 1);
+	glOrtho(0, WORLDSIZE * SCALE, 0, WORLDHEIGHT * SCALE, 0, 1);
 
 	//output
 	glutDisplayFunc(display);
