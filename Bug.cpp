@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kristjan Thorsteinsson. All rights reserved.
 //
 
+#include <GL/glut.h>
 #include "Bug.h"
 #include "Organism.h"
 using namespace std;

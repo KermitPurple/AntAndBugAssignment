@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Kristjan Thorsteinsson. All rights reserved.
 //
 #include <cstdlib>
-
+#include <GL/glut.h>
 #include <iostream>
 #include "Ant.h"
 #include "Organism.h"
