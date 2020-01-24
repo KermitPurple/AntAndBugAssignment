@@ -16,3 +16,5 @@ World.o: World.cpp
 main.o: main.cpp
 	g++ main.cpp -c -o main.o
 
+test:
+	test.exe
