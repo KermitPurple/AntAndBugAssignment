@@ -13,22 +13,6 @@ void display(){
 	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good
 }
 
-//int main()
-//{
-//    World myWorld(time(0));
-//
-//    myWorld.display();
-//
-//    char ch;
-//
-//    while (cin.get(ch) && ch != 'q') {   // q for quit
-//        myWorld.simulateOneStep();
-//        myWorld.display();
-//    }
-//
-//    return 0;
-//}
-
 void kbin(unsigned char key, int x, int y){
 	cout << key << endl;
 	if(key == 'q'){
@@ -55,7 +39,7 @@ int main(int argc, char *argv[]){
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition ( 0, 0 ) ;
 	glutInitWindowSize (500, 600) ;
-	glutCreateWindow( "Ant and Bug Simulation" );
+	glutCreateWindow( "Organism Simulation" );
 	glOrtho(0, WORLDSIZE * SCALE, 0, WORLDHEIGHT * SCALE, 0, 1);
 
 	//output
