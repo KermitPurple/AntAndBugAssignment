@@ -1,5 +1,5 @@
 all: Ant.o Bug.o World.o Organism.o main.o
-	g++ *.o -o test.exe
+	g++ *.o -o test.exe -l freeGLUT -l openGL32
 
 Ant.o: Ant.cpp
 	g++ Ant.cpp -c -o Ant.o
@@ -11,10 +11,10 @@ Organism.o: Organism.cpp
 	g++ Organism.cpp -c -o Organism.o
 
 World.o: World.cpp
-	g++ World.cpp -c -o World.o
+	g++ World.cpp -c -o World.o -l freeGLUT -l openGL32
 
 main.o: main.cpp
-	g++ main.cpp -c -o main.o
+	g++ main.cpp -c -o main.o -l freeGLUT -l openGL32
 
-test:
+test: all
 	test.exe
