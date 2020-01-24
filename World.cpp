@@ -63,29 +63,22 @@ void World::display() const {
 	printGrid();
 
 	//print text text grid
-	system("cls");
     int numAnts = 0;
     int numBugs = 0;
     int numSuperAnts = 0;
-    cout << endl << endl;
     for (int j = 0; j < WORLDSIZE; j++) {
         for (int i = 0; i < WORLDSIZE; i++) {
-            if (grid[i][j] == NULL) {
-                cout << ".";
-            } else {
+            if (grid[i][j] != NULL) {
                 if (grid[i][j]->getType() == ANT) {
                     numAnts++;
                 }
                 else if (grid[i][j]->getType() == BUG) {
                     numBugs++;
                 }
-                cout << grid[i][j]->representation();
 		grid[i][j]->printIcon(i,j);
             }
         }
-        cout << endl;
     }
-    cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
 
 	//print text
 	printOrgNums(numBugs, numAnts, numSuperAnts);

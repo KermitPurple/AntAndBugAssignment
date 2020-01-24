@@ -14,7 +14,6 @@ void display(){
 }
 
 void kbin(unsigned char key, int x, int y){
-	cout << key << endl;
 	if(key == 'q'){
 		exit(1);
 	}
