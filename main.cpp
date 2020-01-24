@@ -8,8 +8,14 @@ void display(){
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//I do as the sample code says
 		for(int i = 0; i < WORLDSIZE; i++){
 			glBegin(GL_LINES);
-				glVertex2f(0, i);
-				glVertex2f(WORLDSIZE, i);
+				glVertex2f(0, i+0.5);
+				glVertex2f(WORLDSIZE, i+0.5);
+			glEnd();
+		}
+		for(int i = 0; i < WORLDSIZE; i++){
+			glBegin(GL_LINES);
+				glVertex2f(i+0.5, 0);
+				glVertex2f(i+0.5, WORLDSIZE);
 			glEnd();
 		}
 	glutSwapBuffers();//I do as sample code commands
@@ -38,7 +44,7 @@ int main(int argc, char *argv[]){
 	glutInitWindowPosition ( 0, 0 ) ;
 	glutInitWindowSize (500, 500) ;
 	glutCreateWindow( "Ant and Bug Simulation" );
-	glOrtho(0, WORLDSIZE, 0, WORLDSIZE + 1, 0, 1);
+	glOrtho(0, WORLDSIZE, 0, WORLDSIZE, 0, 1);
 	World myWorld(time(0));
 
 	//output
