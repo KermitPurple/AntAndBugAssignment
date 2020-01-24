@@ -108,7 +108,7 @@ void World::display() const {
 		int len = text[i].length();
 		glRasterPos2d(WordPos[i].x, WordPos[i].y);
 		for(int j = 0; j < len; j++){
-			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i][j]);
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, text[i][j]);
 		}
 	}
 }
