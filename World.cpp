@@ -207,12 +207,14 @@ void World::breedOrganisms() {
 
 //print grid
 void World::printGrid() const{
+	//print horizontal lines
 	for(int i = 1; i < WORLDHEIGHT; i++){
 		glBegin(GL_LINES);
 			glVertex2f(0, i * SCALE);
 			glVertex2f(WORLDSIZE * SCALE, i * SCALE);
 		glEnd();
 	}
+	//print verticle lines
 	for(int i = 0; i < WORLDSIZE; i++){
 		glBegin(GL_LINES);
 			glVertex2f(i * SCALE, SCALE);
@@ -223,24 +225,30 @@ void World::printGrid() const{
 
 //print organism numbers
 void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
+	// convert from int to string
 	stringstream str;
 	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;
 	string strBugs, strAnts, strSuperAnts;
 	str >> strBugs >> strAnts >> strSuperAnts;
+	//store in array
 	string text[3] = {
 		"Bugs: " + strBugs,
 		"Ants: " + strAnts,
 		"Super Ants: " + strSuperAnts,
 	};
+	//coordinates for the text
 	Position WordPos[3] = {
 		{0, int(0.7 * SCALE)},
 		{0, int(0.4 * SCALE)},
 		{0, int(0.1 * SCALE)},
 	};
+	//print 3 lines of text
 	for(int i = 0;i < 3 ;i++){
 		int len = text[i].length();
 		glRasterPos2d(WordPos[i].x, WordPos[i].y);
+		//cycle thru chars in word
 		for(int j = 0; j < len; j++){
+			//print
 			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, text[i][j]);
 		}
 	}
