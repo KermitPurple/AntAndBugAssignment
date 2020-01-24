@@ -59,6 +59,10 @@ void World::setAt(int x, int y, Organism* org) {
 
 // Displays the world in ASCII.
 void World::display() const {
+	//print Grid
+	printGrid();
+
+	//print text text grid
 	system("cls");
     int numAnts = 0;
     int numBugs = 0;
@@ -81,8 +85,6 @@ void World::display() const {
         cout << endl;
     }
     cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
-	//print Grid
-	printGrid();
 
 	//print text
 	printOrgNums(numAnts, numBugs, numSuperAnts);
