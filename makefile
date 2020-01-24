@@ -19,7 +19,5 @@ main.o: main.cpp
 clean:
 	rm *.o test.exe
 
-force: clean all
-
 test: all
 	test.exe
