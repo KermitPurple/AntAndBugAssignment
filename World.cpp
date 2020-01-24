@@ -62,7 +62,7 @@ void World::display() const {
 	//print Grid
 	printGrid();
 
-	//print text text grid
+	//print grid
     int numAnts = 0;
     int numBugs = 0;
     int numSuperAnts = 0;
