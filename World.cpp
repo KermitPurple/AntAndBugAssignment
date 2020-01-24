@@ -1,3 +1,4 @@
+#include <GL/glut.h>
 #include <iostream>
 #include <cstdlib>  // for rand
 #include "World.h"
@@ -56,26 +57,38 @@ void World::setAt(int x, int y, Organism* org) {
 
 // Displays the world in ASCII.
 void World::display() const {
-    int numAnts = 0;
-    int numBugs = 0;
-    cout << endl << endl;
-    for (int j = 0; j < WORLDSIZE; j++) {
-        for (int i = 0; i < WORLDSIZE; i++) {
-            if (grid[i][j] == NULL) {
-                cout << ".";
-            } else {
-                if (grid[i][j]->getType() == ANT) {
-                    numAnts++;
-                }
-                else if (grid[i][j]->getType() == BUG) {
-                    numBugs++;
-                }
-                cout << grid[i][j]->representation();
-            }
-        }
-        cout << endl;
-    }
-    cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
+    //int numAnts = 0;
+    //int numBugs = 0;
+    //cout << endl << endl;
+    //for (int j = 0; j < WORLDSIZE; j++) {
+    //    for (int i = 0; i < WORLDSIZE; i++) {
+    //        if (grid[i][j] == NULL) {
+    //            cout << ".";
+    //        } else {
+    //            if (grid[i][j]->getType() == ANT) {
+    //                numAnts++;
+    //            }
+    //            else if (grid[i][j]->getType() == BUG) {
+    //                numBugs++;
+    //            }
+    //            cout << grid[i][j]->representation();
+    //        }
+    //    }
+    //    cout << endl;
+    //}
+    //cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
+	for(int i = 0; i < WORLDSIZE; i++){
+		glBegin(GL_LINES);
+			glVertex2f(0, i+0.5);
+			glVertex2f(WORLDSIZE, i+0.5);
+		glEnd();
+	}
+	for(int i = 0; i < WORLDSIZE; i++){
+		glBegin(GL_LINES);
+			glVertex2f(i+0.5, 0);
+			glVertex2f(i+0.5, WORLDSIZE);
+		glEnd();
+	}
 }
 
 void World::simulateOneStep() {
