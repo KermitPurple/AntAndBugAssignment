@@ -100,9 +100,9 @@ void World::display() const {
 		"Super Ants: 0",
 	};
 	Position WordPos[3] = {
-		{0, 70},
-		{0, 40},
-		{0, 10},
+		{0, int(0.7 * SCALE)},
+		{0, int(0.4 * SCALE)},
+		{0, int(0.1 * SCALE)},
 	};
 	for(int i = 0;i < 3 ;i++){
 		int len = text[i].length();
