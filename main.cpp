@@ -33,9 +33,9 @@ int main(int argc, char *argv[]){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition ( 0, 0 ) ;
-	glutInitWindowSize (500, 500) ;
+	glutInitWindowSize (500, 600) ;
 	glutCreateWindow( "Ant and Bug Simulation" );
-	glOrtho(0, WORLDSIZE, 0, WORLDSIZE, 0, 1);
+	glOrtho(0, WORLDSIZE, 0, WORLDSIZE + 1, 0, 1);
 
 	//output
 	glutDisplayFunc(display);

@@ -6,7 +6,7 @@
 enum Move {UP = 0, DOWN, LEFT, RIGHT};
 
 // The size of this world
-const int WORLDSIZE = 5;
+const int WORLDSIZE = 10;
 
 // Number of initial ants
 const int INITIAL_ANTS = 5;

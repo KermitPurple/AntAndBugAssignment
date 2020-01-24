@@ -77,16 +77,17 @@ void World::display() const {
     //    cout << endl;
     //}
     //cout << "Ants: " << numAnts << " Bugs: " << numBugs << endl;
-	for(int i = 0; i < WORLDSIZE; i++){
+	//print Grid
+	for(int i = 1; i < WORLDSIZE + 1; i++){
 		glBegin(GL_LINES);
-			glVertex2f(0, i+0.5);
-			glVertex2f(WORLDSIZE, i+0.5);
+			glVertex2f(0, i);
+			glVertex2f(WORLDSIZE, i);
 		glEnd();
 	}
 	for(int i = 0; i < WORLDSIZE; i++){
 		glBegin(GL_LINES);
-			glVertex2f(i+0.5, 0);
-			glVertex2f(i+0.5, WORLDSIZE);
+			glVertex2f(i, 1);
+			glVertex2f(i, WORLDSIZE + 1);
 		glEnd();
 	}
 }
