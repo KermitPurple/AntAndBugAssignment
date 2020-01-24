@@ -34,6 +34,9 @@ void kbin(unsigned char key, int x, int y){
 	if(key == 'q'){
 		exit(1);
 	}
+	if(key == char(32)){//space
+		myWorld.simulateOneStep();
+	}
 }
 
 int main(int argc, char *argv[]){
