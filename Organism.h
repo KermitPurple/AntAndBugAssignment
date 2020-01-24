@@ -37,7 +37,9 @@ class Organism {
         virtual bool isDead() const;
     
         bool in_range(int xx, int yy);
-    
+
+	//virtual void printIcon(int spoty, int Spoty) = 0;
+
     protected:
         // Generates an offspring at the given position.
         virtual void generateOffspring(int whereX, int whereY) = 0;

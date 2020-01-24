@@ -1,4 +1,5 @@
 #include <GL/glut.h>
+#include <sstream>
 #include <string>
 #include <iostream>
 #include <cstdlib>  // for rand
@@ -61,6 +62,7 @@ void World::display() const {
 	system("cls");
     int numAnts = 0;
     int numBugs = 0;
+    int numSuperAnts = 0;
     cout << endl << endl;
     for (int j = 0; j < WORLDSIZE; j++) {
         for (int i = 0; i < WORLDSIZE; i++) {
@@ -94,10 +96,14 @@ void World::display() const {
 	}
 
 	//print text
+	stringstream str;
+	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;
+	string strBugs, strAnts, strSuperAnts;
+	str >> strBugs >> strAnts >> strSuperAnts;
 	string text[3] = {
-		"Bugs: ",
-		"Ants: ",
-		"Super Ants: 0",
+		"Bugs: " + strBugs,
+		"Ants: " + strAnts,
+		"Super Ants: " + strSuperAnts,
 	};
 	Position WordPos[3] = {
 		{0, int(0.7 * SCALE)},
