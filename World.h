@@ -108,6 +108,12 @@ class World
         // that have moved, since breeding places new organisms on the map we
         // don't want to try and breed those.
         void breedOrganisms();
+
+	// Print a grid according to WORLDSIZE
+	void printGrid() const;
+
+	// Prints number of organisms
+	void printOrgNums(int numBugs, int numAnts, int numSuperBugs) const;
 };
 
 #endif // WORLD_H
