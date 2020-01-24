@@ -34,8 +34,18 @@ void kbin(unsigned char key, int x, int y){
 	if(key == 'q'){
 		exit(1);
 	}
-	if(key == char(32)){//space
+	else if(key == char(32)){//space
 		myWorld.simulateOneStep();
+	}
+	else if (key == 'a'){
+		myWorld.createOrganisms(ANT, 1);
+	}
+	else if (key == 'b'){
+		myWorld.createOrganisms(BUG, 1);
+	}
+	else if (key == 's'){
+		//create SuperAnt
+		//myWorld.createOrganisms(SUPERANT, 1);
 	}
 }
 

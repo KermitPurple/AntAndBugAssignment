@@ -149,10 +149,6 @@ Move World::randomMove() const {
     return static_cast<Move>(rand() % 4);
 }
 
-////////////////////
-// Private functions
-////////////////////
-
 void World::createOrganisms(OrganismType orgType, int count) {
     int orgCount = 0;
     while (orgCount < count) {
@@ -170,6 +166,11 @@ void World::createOrganisms(OrganismType orgType, int count) {
         }
     }
 }
+
+////////////////////
+// Private functions
+////////////////////
+
 
 // Reset all organisms to not moved
 void World::resetOrganisms() {

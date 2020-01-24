@@ -59,6 +59,10 @@ class World
 
         // Returns a random move (UP, DOWN, LEFT or RIGHT).
         Move randomMove() const;
+	//
+        // Randomly create `count` many organisms of type `orgType`.  This
+        // method uses the parameterized constructor in Ant and Bug.
+        void createOrganisms(OrganismType orgType, int count);
 
     private:
         // The grid in which the organisms live. According the to image below,
@@ -77,9 +81,6 @@ class World
 		// (See e.g. the destructor for correct iteration through the grid)
         Organism* grid[WORLDSIZE][WORLDSIZE];
 
-        // Randomly create `count` many organisms of type `orgType`.  This
-        // method uses the parameterized constructor in Ant and Bug.
-        void createOrganisms(OrganismType orgType, int count);
 
         // Reset all organisms to not moved. This is necessary because later we
         // iterate through the grid starting from the top left moving to the
