@@ -1,6 +1,7 @@
 #include <GL/glut.h>
 #include <iostream>
 #include <ctime>    // for time
+#include <conio.h>
 #include "World.h"
 using namespace std;
 
@@ -28,6 +29,13 @@ void display(){
 //    return 0;
 //}
 
+void kbin(unsigned char key, int x, int y){
+	cout << key << endl;
+	if(key == 'q'){
+		exit(1);
+	}
+}
+
 int main(int argc, char *argv[]){
 	//initialize
 	glutInit(&argc, argv);
@@ -40,6 +48,7 @@ int main(int argc, char *argv[]){
 	//output
 	glutDisplayFunc(display);
 	glutIdleFunc(display);
+	glutKeyboardFunc(kbin);
 	
 	//Loop
 	glutMainLoop();
