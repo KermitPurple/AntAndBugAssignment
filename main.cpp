@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
 	glutInitWindowPosition ( 0, 0 ) ;
 	glutInitWindowSize (500, 600) ;
 	glutCreateWindow( "Ant and Bug Simulation" );
-	glOrtho(0, WORLDSIZE, 0, WORLDSIZE + 1, 0, 1);
+	glOrtho(0, WORLDSIZE * SCALE, 0, (WORLDSIZE + 1) * SCALE, 0, 1);
 
 	//output
 	glutDisplayFunc(display);

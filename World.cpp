@@ -1,4 +1,5 @@
 #include <GL/glut.h>
+#include <string>
 #include <iostream>
 #include <cstdlib>  // for rand
 #include "World.h"
@@ -81,15 +82,34 @@ void World::display() const {
 	//print Grid
 	for(int i = 1; i < WORLDSIZE + 1; i++){
 		glBegin(GL_LINES);
-			glVertex2f(0, i);
-			glVertex2f(WORLDSIZE, i);
+			glVertex2f(0, i * SCALE);
+			glVertex2f(WORLDSIZE * SCALE, i * SCALE);
 		glEnd();
 	}
 	for(int i = 0; i < WORLDSIZE; i++){
 		glBegin(GL_LINES);
-			glVertex2f(i, 1);
-			glVertex2f(i, WORLDSIZE + 1);
+			glVertex2f(i * SCALE, SCALE);
+			glVertex2f(i * SCALE, (WORLDSIZE + 1) * SCALE);
 		glEnd();
+	}
+
+	//print text
+	string text[3] = {
+		"Bugs: ",
+		"Ants: ",
+		"Super Ants: 0",
+	};
+	Position WordPos[3] = {
+		{0, 70},
+		{0, 40},
+		{0, 10},
+	};
+	for(int i = 0;i < 3 ;i++){
+		int len = text[i].length();
+		glRasterPos2d(WordPos[i].x, WordPos[i].y);
+		for(int j = 0; j < len; j++){
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[i][j]);
+		}
 	}
 }
 
