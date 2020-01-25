@@ -6,7 +6,7 @@
 enum Move {UP = 0, DOWN, LEFT, RIGHT};
 
 // The size of this world
-const int WORLDSIZE = 12;
+const int WORLDSIZE = 15;
 
 // Height of the screen itself (1 more than WORLDSIZE)
 const int WORLDHEIGHT = WORLDSIZE + 1;
@@ -125,7 +125,13 @@ class World
 	// Prints number of organisms
 	void printOrgNums(int numBugs, int numAnts, int numSuperBugs) const;
 
+	// bool whether or not input needed for simulateOneStep
 	bool mutable Auto;
+
+	// check if grid is empty
+	// This is done because if you try to add an organism when the grid is full,
+	// The program never exists the for loop
+	bool emptyGrid() const;
 };
 
 #endif // WORLD_H

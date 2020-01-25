@@ -138,6 +138,9 @@ void World::createOrganisms(OrganismType orgType, int count) {
                 new Bug(this, p.x, p.y);   // Create a Bug and put it into the world
             }
         }
+        else if (emptyGrid()){
+            break;
+        }
     }
 }
 
@@ -295,4 +298,15 @@ void World::toggleAuto() const{
 
 bool World::getAuto() const{
         return Auto;
+}
+
+bool World::emptyGrid() const{
+        for(int j = 0; j < WORLDSIZE; j++){
+            for(int i = 0; i < WORLDSIZE; i++){
+                if(grid[i][j] == NULL){
+                    return false;
+                }
+            }
+        }
+        return true;
 }
