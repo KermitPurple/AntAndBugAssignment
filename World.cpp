@@ -78,7 +78,7 @@ void World::display() const {
                 else if (grid[i][j]->getType() == BUG) {
                     numBugs++;
                 }
-		grid[i][j]->printIcon(i,j);
+                grid[i][j]->printIcon(i,j);
             }
         }
     }
