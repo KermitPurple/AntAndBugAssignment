@@ -12,7 +12,7 @@ void display(){
 	// if auto, move forward 1 step
 	if(myWorld.getAuto()){
 		myWorld.simulateOneStep();
-		Sleep(500);
+		Sleep(250);
 	}
 	myWorld.display();
 	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good

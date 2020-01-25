@@ -17,23 +17,23 @@ class Ant : public Organism
 {
 public:
     
-    Ant(World* aWorld, int xcoord, int ycoord);
-    // In the given world moves this organism.
-    void move();
-    
-    // Makes this organism breed.
-    void breed();
-    
-    // Returns the type of this organism.
-    OrganismType getType() const;
-    
-    // The character representation of this organism.
-    char representation() const;
-    
-    // The size of this organism.
-    int size() const;
-    
-    bool in_range(int xx, int yy);
+	Ant(World* aWorld, int xcoord, int ycoord);
+	// In the given world moves this organism.
+	void move();
+
+	// Makes this organism breed.
+	void breed();
+
+	// Returns the type of this organism.
+	OrganismType getType() const;
+
+	// The character representation of this organism.
+	char representation() const;
+
+	// The size of this organism.
+	int size() const;
+
+	bool in_range(int xx, int yy);
     
 	//prints the icon of the corresponding organism
 	virtual void printIcon(double x, double y) const;
