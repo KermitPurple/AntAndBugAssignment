@@ -225,25 +225,41 @@ void World::printGrid() const{
 void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
 	//Set color
 	glColor3f(1.000f, 1.000f, 1.000f);
+
 	// convert from int to string
 	stringstream str;
 	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;
 	string strBugs, strAnts, strSuperAnts;
 	str >> strBugs >> strAnts >> strSuperAnts;
+
 	//store in array
-	string text[3] = {
+	string text[9] = {
 		"Bugs: " + strBugs,
 		"Ants: " + strAnts,
 		"Super Ants: " + strSuperAnts,
+        "New Bug: b",
+        "New Ant: a",
+        "New SuperAnt: s",
+        "Step: Spacebar",
+        "Quit: q",
+        " ",
 	};
+
 	//coordinates for the text
-	Position WordPos[3] = {
+	Position WordPos[9] = {
 		{0, int(0.7 * SCALE)},
 		{0, int(0.4 * SCALE)},
 		{0, int(0.1 * SCALE)},
+		{WORLDSIZE * SCALE / 3, int(0.7 * SCALE)},
+		{WORLDSIZE * SCALE / 3, int(0.4 * SCALE)},
+		{WORLDSIZE * SCALE / 3, int(0.1 * SCALE)},
+		{int(WORLDSIZE * SCALE / 1.5), int(0.7 * SCALE)},
+		{int(WORLDSIZE * SCALE / 1.5), int(0.4 * SCALE)},
+		{int(WORLDSIZE * SCALE / 1.5), int(0.1 * SCALE)},
 	};
-	//print 3 lines of text
-	for(int i = 0;i < 3 ;i++){
+
+	//print lines of text
+	for(int i = 0;i < 9 ;i++){
 		int len = text[i].length();
 		glRasterPos2d(WordPos[i].x, WordPos[i].y);
 		//cycle thru chars in word

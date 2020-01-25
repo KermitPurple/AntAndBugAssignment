@@ -35,6 +35,10 @@ struct Position
     int y;
 };
 
+struct Color{
+	int val[3];
+};
+
 class World
 {
     public:
