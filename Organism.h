@@ -42,7 +42,7 @@ class Organism {
 	virtual void printIcon(double x, double y) const = 0;
 
 	//prints a square inside of a grid block;
-	void printSquare(double x, double y) const;
+	void printSquare(double x, double y, double size) const;
 
     protected:
         // Generates an offspring at the given position.

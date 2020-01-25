@@ -148,5 +148,5 @@ void Bug::printIcon(double x, double y) const{
 	glColor3f(0, 1, 0);
 	
 	//print
-	printSquare(x, y);
+	printSquare(x, y, size());
 }

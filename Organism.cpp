@@ -67,17 +67,18 @@ bool Organism::in_range(int xx, int yy)
 bool Organism::isDead() const {
     return false;
 }
-void Organism::printSquare(double x, double y) const{
+void Organism::printSquare(double x, double y, double size) const{
 	//transform coordinates
+	size /= 70;
 	x += 0.5;
 	y = abs(y - WORLDSIZE);
 	y += 0.5;
 
 	//draw
 	glBegin(GL_QUADS);
-		glVertex2f((x - 0.4) * SCALE, (y - 0.4) * SCALE);
-		glVertex2f((x + 0.4) * SCALE, (y - 0.4) * SCALE);
-		glVertex2f((x + 0.4) * SCALE, (y + 0.4) * SCALE);
-		glVertex2f((x - 0.4) * SCALE, (y + 0.4) * SCALE);
+		glVertex2f((x - size) * SCALE, (y - size) * SCALE);
+		glVertex2f((x + size) * SCALE, (y - size) * SCALE);
+		glVertex2f((x + size) * SCALE, (y + size) * SCALE);
+		glVertex2f((x - size) * SCALE, (y + size) * SCALE);
 	glEnd();
 }

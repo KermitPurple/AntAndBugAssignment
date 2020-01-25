@@ -93,6 +93,6 @@ void Ant::printIcon(double x, double y) const{
 	glColor3f(1.000f, 0.000f, 0.000f);
 
 	//print
-	printSquare(x, y);
+	printSquare(x, y,size());
 
 }
