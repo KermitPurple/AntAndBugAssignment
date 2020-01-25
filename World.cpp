@@ -61,6 +61,7 @@ void World::setAt(int x, int y, Organism* org) {
 
 // Displays the world in ASCII.
 void World::display() const {
+     
 	//print Grid
 	printGrid();
 
@@ -240,8 +241,8 @@ void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
         "New Ant: a",
         "New SuperAnt: s",
         "Step: Spacebar",
+        "Toggle Auto-Mode: z",
         "Quit: q",
-        " ",
 	};
 
 	//coordinates for the text

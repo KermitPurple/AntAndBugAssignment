@@ -9,6 +9,11 @@ World myWorld(time(0));
 
 void display(){
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//Clears the Screen
+	// if auto, move forward 1 step
+	if(myWorld.getAuto()){
+		myWorld.simulateOneStep();
+		Sleep(500);
+	}
 	myWorld.display();
 	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good
 }
@@ -29,6 +34,9 @@ void kbin(unsigned char key, int x, int y){
 	else if (key == 's'){
 		//create SuperAnt
 		//myWorld.createOrganisms(SUPERANT, 1);
+	}
+	else if (key == 'z'){
+		myWorld.toggleAuto();
 	}
 }
 
