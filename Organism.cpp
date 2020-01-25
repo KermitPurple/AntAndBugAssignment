@@ -69,7 +69,7 @@ bool Organism::isDead() const {
 }
 void Organism::printSquare(double x, double y, double size) const{
 	//transform coordinates
-	size /= 70;
+	size = 0.4 * (size/40);
 	x += 0.5;
 	y = abs(y - WORLDSIZE);
 	y += 0.5;
