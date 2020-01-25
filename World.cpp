@@ -15,6 +15,8 @@ using namespace std;
 // Default constructor: creates and initializes the world
 // the seed is used for seeding the random behaviour.
 World::World(unsigned int seed) {
+    // default not auto
+    Auto = false;
     // seed the random generator
     srand(seed);
     // Create an empty world
@@ -284,4 +286,12 @@ void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
 			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, text[i][j]);
 		}
 	}
+}
+
+void World::toggleAuto() const{
+        Auto = !Auto;
+}
+
+bool World::getAuto() const{
+        return Auto;
 }

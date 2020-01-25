@@ -71,6 +71,12 @@ class World
         // method uses the parameterized constructor in Ant and Bug.
         void createOrganisms(OrganismType orgType, int count);
 
+	// toggle between manually moving forward and automatically moving
+	void toggleAuto() const;
+
+	//return Auto
+	bool getAuto() const;
+
     private:
         // The grid in which the organisms live. According the to image below,
         // the correct iteration order through grid starts at the top left
@@ -118,6 +124,8 @@ class World
 
 	// Prints number of organisms
 	void printOrgNums(int numBugs, int numAnts, int numSuperBugs) const;
+
+	bool mutable Auto;
 };
 
 #endif // WORLD_H
