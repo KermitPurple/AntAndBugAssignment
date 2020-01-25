@@ -223,9 +223,6 @@ void World::printGrid() const{
 
 //print organism numbers
 void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
-	//Set color
-	glColor3f(1.000f, 1.000f, 1.000f);
-
 	// convert from int to string
 	stringstream str;
 	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;
@@ -258,10 +255,29 @@ void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
 		{int(WORLDSIZE * SCALE / 1.5), int(0.1 * SCALE)},
 	};
 
+    //Colors for the text
+    Color TextColor[9] = {
+            {0,1,0},
+            {1,0,0},
+            {0,0,1},
+            {0,1,0},
+            {1,0,0},
+            {0,0,1},
+            {1,1,1},
+            {1,1,1},
+            {1,1,1},
+    };
+
 	//print lines of text
 	for(int i = 0;i < 9 ;i++){
 		int len = text[i].length();
+
+        //apply Colors
+        glColor3f(TextColor[i].val[0], TextColor[i].val[1], TextColor[i].val[2]);
+
+        //apply coordinates
 		glRasterPos2d(WordPos[i].x, WordPos[i].y);
+
 		//cycle thru chars in word
 		for(int j = 0; j < len; j++){
 			//print

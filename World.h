@@ -36,7 +36,7 @@ struct Position
 };
 
 struct Color{
-	int val[3];
+	float val[3];
 };
 
 class World
