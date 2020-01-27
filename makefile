@@ -16,6 +16,9 @@ World.o: World.cpp World.h
 main.o: main.cpp
 	g++ main.cpp -c -o main.o -l freeGLUT -l openGL32
 
+WorldGL.o: WorldGL.cpp
+	g++ WorldGL.cpp -c -o WorldGL.o -l freeGLUT -l openGL32
+
 clean:
 	rm *.o test.exe
 
