@@ -4,14 +4,6 @@
 #include"time.h"
 
 class WorldGL {
-private:
-	World myWorld;
-
-	//print the board
-	static void display();
-	
-	//accept keyboard input
-	static void kbin();
 public:
 	WorldGL(int argc, char *argv[]);
 

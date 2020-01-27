@@ -3,7 +3,9 @@
 #include"WorldGL.h"
 #include"World.h"
 
-static void WorldGL::display(){
+World myWorld(time(0));
+
+void display(){
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//Clears the Screen
 	// if auto, move forward 1 step
 	if(myWorld.getAuto()){
@@ -14,7 +16,7 @@ static void WorldGL::display(){
 	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good
 }
 
-static void WorldGL::kbin(unsigned char key, int x, int y) {
+void kbin(unsigned char key, int x, int y) {
 	if(key == 'q'){
 		exit(1);
 	}
@@ -37,7 +39,6 @@ static void WorldGL::kbin(unsigned char key, int x, int y) {
 }
 
 WorldGL::WorldGL(int argc, char *argv[]){
-	myWorld = World(time(0));
 	//initialize
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
