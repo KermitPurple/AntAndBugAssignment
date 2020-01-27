@@ -1,4 +1,4 @@
-all: Ant.o Bug.o World.o Organism.o main.o World.o
+all: Ant.o Bug.o World.o Organism.o main.o World.o WorldGl.o
 	g++ *.o -o test.exe -l freeGLUT -l openGL32
 
 Ant.o: Ant.cpp Ant.h
