@@ -5,13 +5,13 @@
 
 class WorldGL {
 private:
-	World myWorld(time(0));
+	World myWorld;
 
 	//print the board
-	void display() const;
+	static void display();
 	
 	//accept keyboard input
-	void kbin() const;
+	static void kbin();
 public:
 	WorldGL(int argc, char *argv[]);
 
