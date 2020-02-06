@@ -15,8 +15,8 @@ using namespace std;
 // Default constructor: creates and initializes the world
 // the seed is used for seeding the random behaviour.
 World::World(unsigned int seed) {
-    // default not auto
-    Auto = false;
+    // default auto
+    Auto = true;
     // seed the random generator
     srand(seed);
     // Create an empty world
