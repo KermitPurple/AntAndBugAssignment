@@ -27,10 +27,13 @@ public:
 	//prints the icon of the corresponding organism
 	virtual void printIcon(double x, double y) const;
 
+	bool isDead() const;
+
 private:
     void generateOffspring(int whereX, int whereY);
     int death_tik;
     void printLetter(int whereX, int whereY)const;
+    void explode();
 };
 
 #endif //BOMBUG_H

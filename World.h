@@ -113,6 +113,7 @@ class World
         // removed.
         void cleanup();
 
+
         // Make every organism in this world breed. Make sure to iterate
         // through grid in order as specified above and to only breed organisms
         // that have moved, since breeding places new organisms on the map we

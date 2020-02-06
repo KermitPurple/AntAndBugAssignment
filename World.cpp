@@ -30,6 +30,7 @@ World::World(unsigned int seed) {
     createOrganisms(ANT, INITIAL_ANTS);
     // creates the bugs = 8
     createOrganisms(BUG, INITIAL_BUGS);
+    createOrganisms(BOMBBUG, 1);
 }
 
 // Deallocate memory allocated to organisms in this world.
@@ -190,8 +191,8 @@ void World::moveOrganism(OrganismType aType) {
 void World::cleanup() {
     for (int i = 0; i < WORLDSIZE; i++) {
         for (int j = 0; j < WORLDSIZE; j++) {
+		if ((grid[i][j] != NULL) && grid[i][j]->isDead()) {
             // Kill off any organisms that haven't eaten recently
-            if ((grid[i][j] != NULL) && grid[i][j]->isDead()) {
                 delete grid[i][j];
                 grid[i][j] = NULL;
             }
