@@ -105,6 +105,8 @@ void World::simulateOneStep() {
     // Move the ants
     moveOrganism(ANT);
 
+    moveOrganism(BOMBBUG);
+
     // Make the bugs starve
     cleanup();
 

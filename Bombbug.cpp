@@ -8,6 +8,7 @@ Bombbug::Bombbug(World* aWorld, int xcoord, int ycoord) : Organism(aWorld, xcoor
 }
 
 void Bombbug::move(){
+	death_tik--;
 }
 
 void Bombbug::breed(){
