@@ -33,6 +33,9 @@ void kbin(unsigned char key, int x, int y) {
 		//create SuperAnt
 		//myWorld.createOrganisms(SUPERANT, 1);
 	}
+	else if (key == 'v'){
+		myWorld.createOrganisms(BOMBBUG, 1);
+	}
 	else if (key == 'z'){
 		myWorld.toggleAuto();
 	}

@@ -6,6 +6,7 @@
 #include "World.h"
 #include "Ant.h"
 #include "Bug.h"
+#include "Bombbug.h"
 using namespace std;
 
 ///////////////////
@@ -137,6 +138,9 @@ void World::createOrganisms(OrganismType orgType, int count) {
             else if (orgType == BUG) {
                 new Bug(this, p.x, p.y);   // Create a Bug and put it into the world
             }
+	    else if (orgType == BOMBBUG){
+		    new Bombbug(this, p.x, p.y);
+	    }
         }
         else if (emptyGrid()){
             break;
