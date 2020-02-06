@@ -1,4 +1,4 @@
-all: Ant.o Bug.o World.o Organism.o main.o World.o WorldGl.o
+all: Ant.o Bug.o World.o Organism.o main.o World.o WorldGl.o Superant.o
 	g++ *.o -o test.exe -l freeGLUT -l openGL32
 
 Ant.o: Ant.cpp Ant.h
@@ -18,6 +18,9 @@ main.o: main.cpp
 
 WorldGL.o: WorldGL.cpp
 	g++ WorldGL.cpp -c -o WorldGL.o -l freeGLUT -l openGL32
+
+Superant.o: Superant.cpp
+	g++ Superant.cpp -c -o Superant.o -l freeGLUT -l openGL32
 
 clean:
 	rm *.o test.exe
