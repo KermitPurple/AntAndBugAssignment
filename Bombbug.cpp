@@ -53,16 +53,14 @@ void Bombbug::printLetter(int whereX, int whereY)const{
 	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, char(48+death_tik));
 }
 void Bombbug::explode(){
-	for(int i = y-1; i <= y+1; i++){
-		for(int j = x-1; j <= x+1; j++){
-			if(world->getAt(j,i) != NULL){
-				delete world->getAt(j,i);
-				world->setAt(j,i,NULL);
+	for(int i = -1; i <= 1; i++){
+		for (int j = -1; j <= 1; j++){
+			if(world->getAt(x + j,y + i) != NULL && (i !=0 && j != 0)){
+				delete world->getAt(x + j,y + i);
+				world->setAt(x + j,y + i,NULL);
 			}
 		}
 	}
-	delete world->getAt(x, y);
-	world->setAt(x, y, NULL);
 }
 bool Bombbug::isDead() const{
 	if(death_tik <=-1)
