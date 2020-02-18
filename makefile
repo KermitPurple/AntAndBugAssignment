@@ -1,5 +1,7 @@
 all: Ant.o Bug.o World.o Organism.o main.o World.o WorldGl.o Superant.o
 	g++ *.o -o test.exe -l freeGLUT -l openGL32
+	@echo
+	
 
 Ant.o: Ant.cpp Ant.h
 	g++ Ant.cpp -c -o Ant.o -l freeGLUT -l openGL32
