@@ -32,8 +32,6 @@ public:
 private:
     void generateOffspring(int whereX, int whereY);
     int death_tik;
-    void printLetter(int whereX, int whereY)const;
-    void explode();
 };
 
 #endif //SUPERANT_H
