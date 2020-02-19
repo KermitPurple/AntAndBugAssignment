@@ -14,7 +14,7 @@ void Superant::move()
     
     if(world->getAt(x, y + 1) != NULL)
     {
-        if(world->getAt(x, y + 1)->getType() == ANT)
+        if(world->getAt(x, y + 1)->getType() == BUG)
         {
             death_tik = 0;
             delete world->getAt(x, y + 1);
@@ -25,7 +25,7 @@ void Superant::move()
     
     if(world->getAt(x, y - 1) != NULL)
     {
-        if(world->getAt(x, y - 1)->getType() == ANT)
+        if(world->getAt(x, y - 1)->getType() == BUG)
         {
             death_tik = 0;
             delete world->getAt(x, y - 1);
@@ -36,7 +36,7 @@ void Superant::move()
     
     if(world->getAt(x - 1, y) != NULL)
     {
-        if(world->getAt(x - 1, y)->getType() == ANT)
+        if(world->getAt(x - 1, y)->getType() == BUG)
         {
             death_tik = 0;
             delete world->getAt(x - 1, y);
@@ -46,7 +46,7 @@ void Superant::move()
     }
     if(world->getAt(x + 1, y) != NULL)
     {
-        if(world->getAt(x + 1, y)->getType() == ANT)
+        if(world->getAt(x + 1, y)->getType() == BUG)
         {
             death_tik = 0;
             delete world->getAt(x + 1, y);
@@ -103,7 +103,7 @@ void Superant::breed()
 
 bool Superant::isDead() const
 {
-    if(death_tik >= STARVE_BUGS)
+    if(death_tik >= STARVE_SUPERANTS)
     {
         return true;
     }
