@@ -141,6 +141,9 @@ void World::createOrganisms(OrganismType orgType, int count) {
             else if (orgType == BUG) {
                 new Bug(this, p.x, p.y);   // Create a Bug and put it into the world
             }
+            else if (orgType == SUPERANT) {
+                new Superant(this, p.x, p.y);   // Create a Bug and put it into the world
+            }
         }
         else if (emptyGrid()){
             break;
