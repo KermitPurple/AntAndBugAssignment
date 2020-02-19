@@ -20,14 +20,23 @@ const int INITIAL_ANTS = 5;
 // Number of initial bugs
 const int INITIAL_BUGS = 1;
 
+//number of intial supeants
+const int INITIAL_SUPERANTS = 1;
+
 // Time steps between breeding of ants
 const int BREED_ANTS = 3;
 
 // Time steps between breeding of bugs
 const int BREED_BUGS = 8;
 
+// number of bugs needed to be eaten between breeding of superants
+const int BREED_SUPERANTS = 5;
+
 // Time steps until bugs die if they have not eaten
 const int STARVE_BUGS = 3;
+
+// Time steps until superants die if they have not eaten
+const int STARVE_SUPERANTS = 3;
 
 struct Position
 {
