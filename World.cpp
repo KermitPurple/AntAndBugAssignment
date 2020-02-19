@@ -110,6 +110,7 @@ void World::simulateOneStep() {
     
     // Move the superants
     moveOrganism(SUPERANT);
+    moveOrganism(SUPERANT);
 
     // Make the bugs starve
     cleanup();
