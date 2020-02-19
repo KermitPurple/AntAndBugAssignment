@@ -9,7 +9,6 @@ Superant::Superant(World* aWorld, int xcoord, int ycoord) : Organism(aWorld, xco
 
 void Superant::move()
 {
-    breedTicks++;
     death_tik++;
     
     if(world->getAt(x, y + 1) != NULL)
@@ -19,6 +18,7 @@ void Superant::move()
             death_tik = 0;
             delete world->getAt(x, y + 1);
             movesTo(x, y + 1);
+	    breedTicks++;
             return;
         }
     }
@@ -30,6 +30,7 @@ void Superant::move()
             death_tik = 0;
             delete world->getAt(x, y - 1);
             movesTo(x, y - 1);
+	    breedTicks++;
             return;
         }
     }
@@ -41,6 +42,7 @@ void Superant::move()
             death_tik = 0;
             delete world->getAt(x - 1, y);
             movesTo(x - 1, y);
+	    breedTicks++;
             return;
         }
     }
@@ -51,6 +53,7 @@ void Superant::move()
             death_tik = 0;
             delete world->getAt(x + 1, y);
             movesTo(x + 1, y);
+	    breedTicks++;
             return;
         }
     }
@@ -94,7 +97,7 @@ void Superant::generateOffspring(int whereX, int whereY)
 
 void Superant::breed()
 {
-    if(breedTicks >= BREED_BUGS)
+    if(breedTicks >= BREED_SUPERANTS)
     {
         breedAtAdjacentCell();
     }
