@@ -6,6 +6,7 @@
 #include "World.h"
 #include "Ant.h"
 #include "Bug.h"
+#include "Superant.h"
 using namespace std;
 
 ///////////////////
