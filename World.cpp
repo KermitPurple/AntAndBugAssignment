@@ -79,6 +79,9 @@ void World::display() const {
                 else if (grid[i][j]->getType() == BUG) {
                     numBugs++;
                 }
+                else if (grid[i][j]->getType() == SUPERANT) {
+                    numSuperAnts++;
+                }
                 grid[i][j]->printIcon(i,j);
             }
         }

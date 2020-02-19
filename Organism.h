@@ -1,7 +1,7 @@
 #ifndef ORGANISM_H
 #define ORGANISM_H
 
-enum OrganismType {ANT, BUG};
+enum OrganismType {ANT, BUG, SUPERANT};
 
 // forward declaration
 class World;

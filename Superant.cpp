@@ -115,18 +115,18 @@ bool Superant::isDead() const
 
 OrganismType Superant::getType() const
 {
-    return BUG;
+    return SUPERANT;
 }
 
 
 char Superant::representation()const
 {
-    return 'X';
+    return 'S';
 }
 
 int Superant::size() const
 {
-    return 30;
+    return 40;
 }
 
 bool Superant::in_range(int xx, int yy)
