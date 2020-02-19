@@ -30,6 +30,8 @@ World::World(unsigned int seed) {
     createOrganisms(ANT, INITIAL_ANTS);
     // creates the bugs = 8
     createOrganisms(BUG, INITIAL_BUGS);
+    // creates the superants
+    createOrganisms(SUPERANT, INITIAL_SUPERANTS);
 }
 
 // Deallocate memory allocated to organisms in this world.

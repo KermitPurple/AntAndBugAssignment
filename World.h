@@ -18,10 +18,10 @@ const int SCALE = 10;
 const int INITIAL_ANTS = 5;
 
 // Number of initial bugs
-const int INITIAL_BUGS = 1;
+const int INITIAL_BUGS = 3;
 
 //number of intial supeants
-const int INITIAL_SUPERANTS = 1;
+const int INITIAL_SUPERANTS = 3;
 
 // Time steps between breeding of ants
 const int BREED_ANTS = 3;
