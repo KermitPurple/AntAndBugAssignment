@@ -8,6 +8,7 @@ class Superant : public Organism {
 public:
        Superant(World* aworld, int xcoord, int ycoord);
 
+       //makes superant move
        void move();
 
        // Makes this organism breed.
@@ -27,10 +28,12 @@ public:
        //prints the icon of the corresponding organism
        virtual void printIcon(double x, double y) const;
 
+       //is the superant dead
        bool isDead() const;
 
 private:
     void generateOffspring(int whereX, int whereY);
+    //count down to death
     int death_tik;
 };
 

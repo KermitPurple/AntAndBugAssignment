@@ -36,7 +36,7 @@ const int BREED_SUPERANTS = 5;
 const int STARVE_BUGS = 3;
 
 // Time steps until superants die if they have not eaten
-const int STARVE_SUPERANTS = 10;
+const int STARVE_SUPERANTS = 3;
 
 struct Position
 {

@@ -5,6 +5,7 @@
 
 class WorldGL {
 public:
+	// constructor that takes information needed for freeGLUT
 	WorldGL(int argc, char *argv[]);
 
 	// simulate world;

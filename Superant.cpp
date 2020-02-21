@@ -7,6 +7,7 @@ Superant::Superant(World* aWorld, int xcoord, int ycoord) : Organism(aWorld, xco
     death_tik = 0;
 }
 
+//move superant
 void Superant::move()
 {
     death_tik++;
