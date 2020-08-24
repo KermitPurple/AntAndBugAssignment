@@ -1,30 +1,20 @@
-all: Ant.o Bug.o World.o Organism.o main.o World.o WorldGl.o Superant.o
-	g++ *.o -o test.exe -l freeGLUT -l openGL32
-	@echo
+CC = g++
+CFLAGS = -c -Wall
+INCLUDE = -Iinclude
+LIBS = -lfreeGLUT -lopenGL32
 
-Ant.o: Ant.cpp Ant.h
-	g++ Ant.cpp -c -o Ant.o -l freeGLUT -l openGL32
+all: main Ant Bug Organism World Superant WorldGL
+	$(CC) bin/*.o -o bin/test.exe $(INCLUDE) $(LIBS)
 
-Bug.o: Bug.cpp Bug.h
-	g++ Bug.cpp -c -o Bug.o -l freeGLUT -l openGL32  
-
-Organism.o: Organism.cpp Organism.h
-	g++ Organism.cpp -c -o Organism.o -l freeGLUT -l openGL32
-
-World.o: World.cpp World.h
-	g++ World.cpp -c -o World.o -l freeGLUT -l openGL32
-
-main.o: main.cpp
-	g++ main.cpp -c -o main.o -l freeGLUT -l openGL32
-
-WorldGL.o: WorldGL.cpp
-	g++ WorldGL.cpp -c -o WorldGL.o -l freeGLUT -l openGL32
-
-Superant.o: Superant.cpp
-	g++ Superant.cpp -c -o Superant.o -l freeGLUT -l openGL32
+%: src/%.cpp
+	$(CC) $< $(CFLAGS) -o bin/$@.o $(INCLUDE) $(LIBS)
 
 clean:
-	rm *.o test.exe
+	rm bin/*
+
+new:
+	mkdir bin
 
 test: all
-	test.exe
+	bin/test.exe
+	
