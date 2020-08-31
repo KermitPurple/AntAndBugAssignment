@@ -37,12 +37,12 @@ World::World(unsigned int seed, int argc, char* argv[]) {
     createOrganisms(BOMBBUG, 1);
 
     // initialize window for graphics library
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition ( 0, 0 ) ;
-	glutInitWindowSize (500, 600) ;
-	glutCreateWindow( "Organism Simulation" );
-	glOrtho(0, WORLDSIZE * SCALE, 0, WORLDHEIGHT * SCALE, 0, 1);
+	glutInit(&argc, argv);// initialize 
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);// choose display mode
+	glutInitWindowPosition(0, 0);//set Position
+	glutInitWindowSize(500, 600);//set size
+	glutCreateWindow("Organism Simulation");// set title
+	glOrtho(0, WORLDSIZE * SCALE, 0, WORLDHEIGHT * SCALE, 0, 1);//set scale
 }
 
 // Deallocate memory allocated to organisms in this world.
