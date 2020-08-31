@@ -3,7 +3,7 @@
 #include"WorldGL.h"
 #include"World.h"
 
-World myWorld(time(0));
+World myWorld(time(0), 0, {"a"});
 
 void display(){
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//Clears the Screen
@@ -12,7 +12,7 @@ void display(){
 		myWorld.simulateOneStep();
 		Sleep(250);
 	}
-	myWorld.display();
+	myWorld.print_screen();
 	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good
 }
 

@@ -13,9 +13,12 @@ using namespace std;
 // Public functions
 ///////////////////
 
+World* World::currentInstance;
+
 // Default constructor: creates and initializes the world
 // the seed is used for seeding the random behaviour.
-World::World(unsigned int seed) {
+World::World(unsigned int seed, int argc, char* argv[]) {
+    currentInstance = this;
     // default auto
     Auto = true;
     // seed the random generator
@@ -32,6 +35,14 @@ World::World(unsigned int seed) {
     createOrganisms(BUG, INITIAL_BUGS);
     // create a bomb bug
     createOrganisms(BOMBBUG, 1);
+
+    // initialize window for graphics library
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+	glutInitWindowPosition ( 0, 0 ) ;
+	glutInitWindowSize (500, 600) ;
+	glutCreateWindow( "Organism Simulation" );
+	glOrtho(0, WORLDSIZE * SCALE, 0, WORLDHEIGHT * SCALE, 0, 1);
 }
 
 // Deallocate memory allocated to organisms in this world.
@@ -63,7 +74,7 @@ void World::setAt(int x, int y, Organism* org) {
 }
 
 // Displays the world in ASCII.
-void World::display() const {
+void World::print_screen() const {
      
 	//print Grid
 	printGrid();
@@ -156,10 +167,52 @@ void World::createOrganisms(OrganismType orgType, int count) {
     }
 }
 
+void World::run() const{
+	//output
+	glutDisplayFunc(display);
+	glutIdleFunc(display);
+	glutKeyboardFunc(kbin);
+	
+	//Loop
+	glutMainLoop();
+}
+
 ////////////////////
 // Private functions
 ////////////////////
 
+void World::kbin(unsigned char key, int x, int y){
+	if(key == 'q'){
+		exit(1);
+	}
+	else if(key == char(32)){//space
+		currentInstance->simulateOneStep();
+	}
+	else if (key == 'a'){
+		currentInstance->createOrganisms(ANT, 1);
+	}
+	else if (key == 'b'){
+		currentInstance->createOrganisms(BUG, 1);
+	}
+	else if (key == 'x'){
+		//create BombBug
+		currentInstance->createOrganisms(BOMBBUG, 1);
+	}
+	else if (key == 'z'){
+		currentInstance->toggleAuto();
+	}
+}
+
+void World::display(){
+	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//Clears the Screen
+	// if auto, move forward 1 step
+	if(currentInstance->getAuto()){
+		currentInstance->simulateOneStep();
+		Sleep(250);
+	}
+	currentInstance->print_screen();
+	glutSwapBuffers();//This keeps it from breaking. I don't know exactly what it does but its good
+}
 
 // Reset all organisms to not moved
 void World::resetOrganisms() {

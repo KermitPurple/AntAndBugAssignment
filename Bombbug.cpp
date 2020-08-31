@@ -1,6 +1,5 @@
 #include "Bombbug.h"
 #include "GL/glut.h"
-#include "WorldGL.h"
 #include "World.h"
 #include "organism.h"
 

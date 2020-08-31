@@ -1,4 +1,4 @@
-all: Ant.o Bug.o World.o Organism.o main.o World.o WorldGl.o Superant.o Bombbug.o
+all: Ant.o Bug.o World.o Organism.o main.o World.o Bombbug.o
 	g++ *.o -o test.exe -l freeGLUT -l openGL32 -lwinmm
 
 Ant.o: Ant.cpp Ant.h
@@ -15,12 +15,6 @@ World.o: World.cpp World.h
 
 main.o: main.cpp
 	g++ main.cpp -c -o main.o -l freeGLUT -l openGL32 -lwinmm
-
-WorldGL.o: WorldGL.cpp
-	g++ WorldGL.cpp -c -o WorldGL.o -l freeGLUT -l openGL32
-
-Superant.o: Superant.cpp
-	g++ Superant.cpp -c -o Superant.o -l freeGLUT -l openGL32
 
 Bombbug.o: Bombbug.cpp
 	g++ Bombbug.cpp -c -o Bombbug.o -l freeGLUT -l openGL32

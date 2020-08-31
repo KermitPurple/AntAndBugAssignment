@@ -44,7 +44,7 @@ class World
     public:
         // Constructor: creates and initializes this world. the seed is used for
         // seeding the random behaviour.
-        World(unsigned int seed);
+        World(unsigned int seed, int argc, char* argv[]);
 
         // Destructor.
         ~World();
@@ -56,7 +56,7 @@ class World
         void setAt(int x, int y, Organism* org);
 
         // Displays this world.
-        void display() const;
+        void print_screen() const;
 
         // Simulates one time step in this world.
         void simulateOneStep();
@@ -77,7 +77,21 @@ class World
 	//return Auto
 	bool getAuto() const;
 
+        // start the main loop and run the game
+        void run() const;
+
     private:
+        // this allows the graphics library to access member variables in static functions
+        // this is done because the graphics library will not accept a member function pointer if it isn't static
+        static World* currentInstance;
+
+        // accept keyboard input using FreeGLUT Library
+        // must be static to be used at all
+        static void kbin(unsigned char key, int x, int y);
+
+        // called every frame. must be static to be used by FreeGLUT
+        static void display();
+
         // The grid in which the organisms live. According the to image below,
         // the correct iteration order through grid starts at the top left
         // corner (i.e. grid[0][0]), loops through one column at a time and ends
