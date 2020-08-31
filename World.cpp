@@ -30,6 +30,7 @@ World::World(unsigned int seed) {
     createOrganisms(ANT, INITIAL_ANTS);
     // creates the bugs = 8
     createOrganisms(BUG, INITIAL_BUGS);
+    // create a bomb bug
     createOrganisms(BOMBBUG, 1);
 }
 
@@ -70,7 +71,7 @@ void World::display() const {
 	//print Icons
     int numAnts = 0;
     int numBugs = 0;
-    int numSuperAnts = 0;
+    int numBombBugs = 0;
     for (int j = 0; j < WORLDSIZE; j++) {
         for (int i = 0; i < WORLDSIZE; i++) {
             if (grid[i][j] != NULL) {
@@ -80,13 +81,16 @@ void World::display() const {
                 else if (grid[i][j]->getType() == BUG) {
                     numBugs++;
                 }
+                else if (grid[i][j]->getType() == BOMBBUG) {
+                    numBombBugs++;
+                }
                 grid[i][j]->printIcon(i,j);
             }
         }
     }
 
 	//print text
-	printOrgNums(numBugs, numAnts, numSuperAnts);
+	printOrgNums(numBugs, numAnts, numBombBugs);
 }
 
 void World::simulateOneStep() {
@@ -236,18 +240,18 @@ void World::printGrid() const{
 }
 
 //print organism numbers
-void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
+void World::printOrgNums(int numBugs, int numAnts, int numBombBugs) const{
 	// convert from int to string
 	stringstream str;
-	str << numBugs << ' ' << numAnts << ' ' << numSuperAnts;
-	string strBugs, strAnts, strSuperAnts;
-	str >> strBugs >> strAnts >> strSuperAnts;
+	str << numBugs << ' ' << numAnts << ' ' << numBombBugs;
+	string strBugs, strAnts, strBombBugs;
+	str >> strBugs >> strAnts >> strBombBugs;
 
 	//store in array
 	string text[9] = {
 		"Bugs: " + strBugs,
 		"Ants: " + strAnts,
-		"Super Ants: " + strSuperAnts,
+		"Bomb Bugs:" + strBombBugs,
         "New Bug: b",
         "New Ant: a",
         "New BombBug: x",
