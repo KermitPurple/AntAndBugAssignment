@@ -108,8 +108,9 @@ void World::simulateOneStep() {
     // The main routine that simulates one turn in the world:
     // 1. move bugs
     // 2. move ants
-    // 3. make bugs starve (which happends under a certain condition)
-    // 4. make the organisms breed (again which happens under a certain
+    // 3. count down bomb bugs
+    // 4. make bugs starve (which happends under a certain condition)
+    // 5. make the organisms breed (again which happens under a certain
     // condition).
 
     // Reset all organisms to not moved
@@ -157,9 +158,9 @@ void World::createOrganisms(OrganismType orgType, int count) {
             else if (orgType == BUG) {
                 new Bug(this, p.x, p.y);   // Create a Bug and put it into the world
             }
-	    else if (orgType == BOMBBUG){
-		    new Bombbug(this, p.x, p.y);
-	    }
+            else if (orgType == BOMBBUG){
+                new Bombbug(this, p.x, p.y);
+            }
         }
         else if (fullGrid()){
             break;

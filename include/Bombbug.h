@@ -8,6 +8,7 @@ class Bombbug : public Organism {
 public:
 	Bombbug(World* aworld, int xcoord, int ycoord);
 
+    // reduce de-increment death tik
 	void move();
 
 	// Makes this organism breed.

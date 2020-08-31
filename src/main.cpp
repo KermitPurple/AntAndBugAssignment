@@ -7,6 +7,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
+    // play the sound
 	PlaySound(TEXT("sound.wav"), NULL, SND_ASYNC);
 
 	World myWorld(0, argc, argv);

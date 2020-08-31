@@ -61,6 +61,7 @@ void Ant::breed()
 }
 
 
+// create another ant and reset breed tiks
 void Ant::generateOffspring(int whereX, int whereY)
 {
     new Ant(this->world, whereX, whereY);

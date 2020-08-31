@@ -17,6 +17,7 @@ class Ant : public Organism
 {
 public:
     
+    //constructor
 	Ant(World* aWorld, int xcoord, int ycoord);
 	// In the given world moves this organism.
 	void move();
@@ -39,6 +40,7 @@ public:
 	virtual void printIcon(double x, double y) const;
 private:
     
+    // create another ant and reset breed tiks
     void generateOffspring(int whereX, int whereY);
 };
 
