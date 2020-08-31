@@ -192,10 +192,10 @@ void World::kbin(unsigned char key, int x, int y){
 	else if (key == 'a'){
 		currentInstance->createOrganisms(ANT, 1);
 	}
-	else if (key == 'b'){
+	else if (key == 'x'){
 		currentInstance->createOrganisms(BUG, 1);
 	}
-	else if (key == 'x'){
+	else if (key == 'b'){
 		//create BombBug
 		currentInstance->createOrganisms(BOMBBUG, 1);
 	}
@@ -306,9 +306,9 @@ void World::printOrgNums(int numBugs, int numAnts, int numBombBugs) const{
 		"Bugs: " + strBugs,
 		"Ants: " + strAnts,
 		"Bomb Bugs:" + strBombBugs,
-        "New Bug: b",
+        "New Bug: x",
         "New Ant: a",
-        "New BombBug: x",
+        "New BombBug: b",
         "Step: Spacebar",
         "Toggle Auto-Mode: z",
         "Quit: q",
