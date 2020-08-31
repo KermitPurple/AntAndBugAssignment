@@ -250,7 +250,7 @@ void World::printOrgNums(int numBugs, int numAnts, int numSuperAnts) const{
 		"Super Ants: " + strSuperAnts,
         "New Bug: b",
         "New Ant: a",
-        "New SuperAnt: s",
+        "New BombBug: x",
         "Step: Spacebar",
         "Toggle Auto-Mode: z",
         "Quit: q",

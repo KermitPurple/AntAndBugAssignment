@@ -29,11 +29,8 @@ void kbin(unsigned char key, int x, int y) {
 	else if (key == 'b'){
 		myWorld.createOrganisms(BUG, 1);
 	}
-	else if (key == 's'){
-		//create SuperAnt
-		//myWorld.createOrganisms(SUPERANT, 1);
-	}
-	else if (key == 'v'){
+	else if (key == 'x'){
+		//create BombBug
 		myWorld.createOrganisms(BOMBBUG, 1);
 	}
 	else if (key == 'z'){
