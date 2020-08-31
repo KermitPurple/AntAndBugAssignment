@@ -68,16 +68,19 @@ void Ant::generateOffspring(int whereX, int whereY)
 }
 
 
+// return OrganismType
 OrganismType Ant::getType() const
 {
     return ANT;
 }
 
+// what ant looks like in terminal
 char Ant::representation() const
 {
     return 'o';
 }
 
+// return size of ant when printed to screen
 int Ant::size() const
 {
     return 10;
@@ -88,6 +91,7 @@ bool Ant::in_range(int xx, int yy)
     return (xx >= 0) && (xx < WORLDSIZE) && (yy >= 0) && (yy < WORLDSIZE);
 }
 
+// print ant to the screen
 void Ant::printIcon(double x, double y) const{
 	//Set color
 	glColor3f(1.000f, 0.000f, 0.000f);

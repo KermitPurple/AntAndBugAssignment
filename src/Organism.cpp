@@ -67,6 +67,7 @@ bool Organism::in_range(int xx, int yy)
 bool Organism::isDead() const {
     return false;
 }
+// uses openGL to print a square on the screen
 void Organism::printSquare(double x, double y, double size) const{
 	//transform coordinates
 	size = 0.4 * (size/40);

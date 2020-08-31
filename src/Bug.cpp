@@ -133,6 +133,7 @@ char Bug::representation()const
     return 'X';
 }
 
+//returns the size the square that we will print should be
 int Bug::size() const
 {
     return 30;
@@ -143,6 +144,7 @@ bool Bug::in_range(int xx, int yy)
     return (xx >= 0) && (xx < WORLDSIZE) && (yy >= 0) && (yy < WORLDSIZE);
 }
 
+// print the bug onto the screen
 void Bug::printIcon(double x, double y) const{
 	//Set color
 	glColor3f(0, 1, 0);

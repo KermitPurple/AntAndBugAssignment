@@ -143,10 +143,10 @@ class World
 	// bool whether or not input needed for simulateOneStep
 	bool mutable Auto;
 
-	// check if grid is empty
+	// check if grid is full
 	// This is done because if you try to add an organism when the grid is full,
 	// The program never exists the for loop
-	bool emptyGrid() const;
+	bool fullGrid() const;
 };
 
 #endif // WORLD_H

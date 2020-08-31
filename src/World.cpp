@@ -161,7 +161,7 @@ void World::createOrganisms(OrganismType orgType, int count) {
 		    new Bombbug(this, p.x, p.y);
 	    }
         }
-        else if (emptyGrid()){
+        else if (fullGrid()){
             break;
         }
     }
@@ -357,15 +357,18 @@ void World::printOrgNums(int numBugs, int numAnts, int numBombBugs) const{
 	}
 }
 
+// toggle auto on and off. stopping or starting the automatic playing of the game
 void World::toggleAuto() const{
         Auto = !Auto;
 }
 
+// return variable auto.
 bool World::getAuto() const{
         return Auto;
 }
 
-bool World::emptyGrid() const{
+// return true if the grid is full
+bool World::fullGrid() const{
         for(int j = 0; j < WORLDSIZE; j++){
             for(int i = 0; i < WORLDSIZE; i++){
                 if(grid[i][j] == NULL){
