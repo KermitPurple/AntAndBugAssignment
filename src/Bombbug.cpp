@@ -38,14 +38,20 @@ bool Bombbug::in_range(int xx, int yy){
 
 // print bomb bug to screen
 void Bombbug::printIcon(double xx, double yy) const{
-	//Set color
-	glColor3f(0.000f, 0.000f, 1.000f);
+    if(death_tik == 0){// draw explosion to screen
+        //Set color
+        glColor3f(1.000f, 0.500f, 0.000f);
+        printSquare(xx, yy, 145);
+    }else{// print bug with timer
+        //Set color
+        glColor3f(0.000f, 0.000f, 1.000f);
 
-	//print
-	printSquare(xx, yy, size());
-	//Set color
-	glColor3f(1.000f, 1.000f, 1.000f);
-	printLetter(xx,yy);
+        //print
+        printSquare(xx, yy, size());
+        //Set color
+        glColor3f(1.000f, 1.000f, 1.000f);
+        printLetter(xx,yy);
+    }
 }
 
 // does nothing bomb bug does not reproduce
